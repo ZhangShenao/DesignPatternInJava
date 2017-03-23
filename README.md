@@ -1,3 +1,3 @@
 # DesignPatternInJava
-实用Java语言描述设计模式
+使用Java语言描述设计模式
 基于HeadFirst
