@@ -18,6 +18,11 @@ public class RemoteController {
 	private Command[] offCommands;
 	
 	/**
+	 * 保存最后一次执行的命令,便于undo
+	 */
+	private Command lastCommand;
+	
+	/**
 	 * 初始化遥控器
 	 * @param slotNum 插槽数
 	 */
@@ -30,6 +35,8 @@ public class RemoteController {
 			onCommands[i] = noCommand;
 			offCommands[i] = noCommand;
 		}
+		
+		lastCommand = noCommand;
 	}
 	
 	/**
@@ -48,6 +55,7 @@ public class RemoteController {
 	 */
 	public void onButtonPressed(int slot){
 		onCommands[slot].execute();
+		lastCommand = onCommands[slot];
 	}
 	
 	/**
@@ -55,13 +63,22 @@ public class RemoteController {
 	 */
 	public void offButtonPressed(int slot){
 		offCommands[slot].execute();
+		lastCommand = offCommands[slot];
+	}
+	
+	/**
+	 * 按下第slot个插槽的撤销按钮,执行撤销命令
+	 */
+	public void undoButtonPressed(){
+		lastCommand.undo();
+		lastCommand = new NoCommand();
 	}
 	
 	@Override
 	public String toString() {
 		StringBuffer buffer = new StringBuffer("\n-----------Remote Control------------\n");
 		for (int i = 0,len = onCommands.length;i < len;i++){
-			buffer.append("[slot " + i + "]" + onCommands[i].getClass().getSimpleName() + " " + offCommands[i].getClass().getSimpleName());
+			buffer.append("[slot " + i + "]" + onCommands[i].getClass().getSimpleName() + " " + offCommands[i].getClass().getSimpleName() + "\n");
 		}
 		return buffer.toString();
 	}

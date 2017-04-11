@@ -6,7 +6,7 @@ package command;
  * @author ZhangShenao
  * @date 2017年4月11日
  */
-public class GarageDoorOpenCommand implements Command{
+public class GarageDoorCloseCommand implements Command{
 	/**
 	 * 内部保存命令接收者实例
 	 */
@@ -15,19 +15,19 @@ public class GarageDoorOpenCommand implements Command{
 	/**
 	 * 在构造器中传入命令的接收者
 	 */
-	public GarageDoorOpenCommand(GarageDoor garageDoor) {
+	public GarageDoorCloseCommand(GarageDoor garageDoor) {
 		this.garageDoor = garageDoor;
 	}
 
 	@Override
 	public void execute() {
 		//调用命令接收者的具体行为执行命令
-		garageDoor.open();
+		garageDoor.close();
 	}
 
 	@Override
 	public void undo() {
-		garageDoor.close();
+		garageDoor.open();
 	}
 
 }

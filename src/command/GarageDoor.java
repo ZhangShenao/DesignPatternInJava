@@ -13,4 +13,11 @@ public class GarageDoor {
 	public void open(){
 		System.out.println("打开车库门");
 	}
+	
+	/**
+	 * 关上车库门
+	 */
+	public void close(){
+		System.out.println("关上车库门");
+	}
 }

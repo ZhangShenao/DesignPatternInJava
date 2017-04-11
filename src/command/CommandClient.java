@@ -13,7 +13,7 @@ public class CommandClient {
 		SimpleRemoteController simpleRemoteController = new SimpleRemoteController();
 		
 		//创建具体的接收者对象
-		Light light = new Light();
+		Light light = new Light("电灯");
 		GarageDoor garageDoor = new GarageDoor();
 		
 		//创建具体的命令对象

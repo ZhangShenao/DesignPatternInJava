@@ -10,6 +10,11 @@ public class NoCommand implements Command{
 
 	@Override
 	public void execute() {
+		//空的命令对象,什么都不做
+	}
+
+	@Override
+	public void undo() {
 	}
 
 }
