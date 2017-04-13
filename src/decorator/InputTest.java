@@ -13,10 +13,10 @@ public class InputTest {
 		//创建自定义的包装输入流
 		LowerCaseInputStream in = new LowerCaseInputStream(new FileInputStream("E://a.txt"));
 		byte[] buff = new byte[1024];
-		int len = 0;
 		
 		in.read(buff, 0, buff.length);
 		
 		System.out.println(new String(buff));
+		in.close();
 	}
 }
