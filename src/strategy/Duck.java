@@ -1,4 +1,4 @@
-package designpatternbase;
+package strategy;
 
 /**
  * 
@@ -17,16 +17,7 @@ public abstract class Duck {
 	 * 鸣叫行为成员,让子类继承
 	 * 面向接口编程
 	 */
-	protected IBarkBehavior barkBehavior;
-	
-	/**
-	 * 在构造器中指定具体的行为
-	 * 让子类重写构造器
-	 */
-	public Duck(IFlyBehavior flyBehavior, IBarkBehavior barkBehavior) {
-		this.flyBehavior = flyBehavior;
-		this.barkBehavior = barkBehavior;
-	}
+	protected IQuackBehavior quackBehavior;
 	
 	/**
 	 * 设置具体的飞行行为
@@ -38,8 +29,8 @@ public abstract class Duck {
 	/**
 	 * 设置具体的鸣叫行为
 	 */
-	public void setBarkBehavior(IBarkBehavior barkBehavior) {
-		this.barkBehavior = barkBehavior;
+	public void setBarkBehavior(IQuackBehavior barkBehavior) {
+		this.quackBehavior = barkBehavior;
 	}
 	
 	/**
@@ -53,7 +44,7 @@ public abstract class Duck {
 	 * 鸭子的鸣叫方法，委托给鸣叫行为成员去实现
 	 */
 	public void performBark(){
-		barkBehavior.bark();
+		quackBehavior.bark();
 	}
 	
 	/**

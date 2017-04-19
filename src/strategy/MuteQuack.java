@@ -1,4 +1,4 @@
-package designpatternbase;
+package strategy;
 
 /**
  * 
@@ -6,7 +6,7 @@ package designpatternbase;
  * @author ZhangShenao
  * @date 2017年4月7日
  */
-public class BarkNoWay implements IBarkBehavior{
+public class MuteQuack implements IQuackBehavior{
 
 	@Override
 	public void bark() {

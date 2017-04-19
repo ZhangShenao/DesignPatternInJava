@@ -1,4 +1,4 @@
-package designpatternbase;
+package strategy;
 
 /**
  *
@@ -7,9 +7,12 @@ package designpatternbase;
  * @date 2017年4月7日
  */
 public class WoodDuck extends Duck{
-
-	public WoodDuck(IFlyBehavior flyBehavior, IBarkBehavior barkBehavior) {
-		super(flyBehavior, barkBehavior);
+	/**
+	 * 构造木头鸭子,不会飞也不会叫
+	 */
+	public WoodDuck() {
+		flyBehavior = new FlyNoWay();
+		quackBehavior = new MuteQuack();
 	}
 
 	@Override

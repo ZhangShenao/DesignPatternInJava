@@ -1,4 +1,4 @@
-package designpatternbase;
+package strategy;
 
 /**
  * 

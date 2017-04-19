@@ -1,4 +1,4 @@
-package designpatternbase;
+package strategy;
 
 /**
  * 
@@ -6,11 +6,10 @@ package designpatternbase;
  * @author ZhangShenao
  * @date 2017年4月7日
  */
-public class ZhiZhiBark implements IBarkBehavior{
+public class Squeak implements IQuackBehavior{
 
 	@Override
 	public void bark() {
 		System.out.println("吱吱叫");
 	}
-
 }

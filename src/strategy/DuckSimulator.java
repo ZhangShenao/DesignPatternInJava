@@ -1,4 +1,4 @@
-package designpatternbase;
+package strategy;
 
 /**
  * 
@@ -9,20 +9,20 @@ package designpatternbase;
  */
 public class DuckSimulator {
 	public static void main(String[] args) {
-		//创建真实的鸭子
-		/*Duck duck = new RealDuck(new FlyWithWings(), new GaGaBark());
+		//创建真实的绿头鸭
+		/*Duck duck = new MallardDuck();
 		duck.display();
 		duck.performBark();
 		duck.performFly();*/
 		
-		//创建橡皮鸭子
-		/*Duck duck = new RubberDuck(new FlyNoWay(), new ZhiZhiBark());
+		//创建模型鸭子
+		/*Duck duck = new ModelDuck();
 		duck.display();
 		duck.performBark();
 		duck.performFly();*/
 		
 		//创建木头鸭子
-		Duck duck = new WoodDuck(new FlyNoWay(), new BarkNoWay());
+		Duck duck = new WoodDuck();
 		duck.display();
 		
 		//木头鸭子本来不会飞

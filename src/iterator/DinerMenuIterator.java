@@ -36,4 +36,10 @@ public class DinerMenuIterator implements Iterator<MenuItem>{
 		return menuItems[menuItemIndex++];
 	}
 
+	@Override
+	public void remove() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
