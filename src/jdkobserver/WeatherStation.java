@@ -1,6 +1,5 @@
 package jdkobserver;
 
-import java.util.Observer;
 
 /**
  * 
@@ -15,15 +14,14 @@ public class WeatherStation {
 		WeatherData weatherData = new WeatherData();
 		
 		//创建具体的观察者
-		Observer temperatureBoard = new TempratureBoard(weatherData);
-		Observer humidityBoard = new HumidityBoard(weatherData);
-		Observer pressureBoard = new PressureBoard(weatherData);
-		
-//		System.out.println("观察者数量: " + weatherData.countObservers());
+		new CurrentConditionsDisplay(weatherData);
+		new ForecastDisplay(weatherData);
+		new StatisticsDisplay(weatherData);
+		System.out.println("观察者数量: " + weatherData.countObservers());
 		
 		//更新天气信息,观察者会立即收到通知并自动更新
-		weatherData.weatherChanged(23.0F, 100.0F, 98.1F);
-		weatherData.weatherChanged(22.5F, 101.9F, 232.2F);
-		weatherData.weatherChanged(21.6F, 106.8F, 98.3F);
+		weatherData.measurementsChanged(23.0F, 100.0F, 98.1F);
+		weatherData.measurementsChanged(22.5F, 101.9F, 232.2F);
+		weatherData.measurementsChanged(21.6F, 106.8F, 98.3F);
 	}
 }

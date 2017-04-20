@@ -45,9 +45,9 @@ public class WeatherData implements Subject{
 	}
 	
 	/**
-	 * 当天气信息变化时，通知所有观察者
+	 * 观测到的气象信息发生变化时，通知所有观察者
 	 */
-	public void weatherChanged(float temperature,float humidity,float pressure){
+	public void measurementsChanged(float temperature,float humidity,float pressure){
 		this.weatherMessage = new WeatherMessage(temperature, humidity, pressure);
 		notifyAllObservers(weatherMessage);
 	}
