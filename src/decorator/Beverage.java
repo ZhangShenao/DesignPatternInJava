@@ -15,7 +15,9 @@ public abstract class Beverage {
 	/**
 	 * 获取饮料的描述信息
 	 */
-	public abstract String getDescription();
+	public String getDescription(){
+		return despcription;
+	}
 	
 	/**
 	 * 计算饮料的价格

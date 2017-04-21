@@ -10,10 +10,6 @@ public class HouseBlend extends Beverage{
 	public HouseBlend(){
 		despcription = "HouseBlend";
 	}
-	@Override
-	public String getDescription() {
-		return despcription;
-	}
 
 	@Override
 	public double getCost() {
