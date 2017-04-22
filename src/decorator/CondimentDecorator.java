@@ -20,9 +20,6 @@ public class CondimentDecorator extends Beverage{
 	
 	/**
 	 * 在构造器中传入具体调料的描述、价格和被装饰的对象
-	 * @param description
-	 * @param beverage
-	 * @param cost
 	 */
 	public CondimentDecorator(String description,Beverage beverage, double cost) {
 		this.despcription = description;

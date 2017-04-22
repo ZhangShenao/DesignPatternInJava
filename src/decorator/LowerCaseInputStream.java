@@ -30,7 +30,7 @@ public class LowerCaseInputStream extends FilterInputStream{
 	@Override
 	public int read(byte[] b, int off, int len) throws IOException {
 		int result = super.read(b, off, len);
-		for (int i = 0,length = off + len;i < length;i++){
+		for (int i = off,length = off + len;i < length;i++){
 			//将读取到的每个字符转换为小写
 			b[i] = (byte) Character.toLowerCase((char)b[i]);
 		}

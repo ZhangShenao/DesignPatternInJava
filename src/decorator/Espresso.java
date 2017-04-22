@@ -10,10 +10,6 @@ public class Espresso extends Beverage{
 	public Espresso(){
 		despcription = "Espresso";
 	}
-	@Override
-	public String getDescription() {
-		return despcription;
-	}
 
 	@Override
 	public double getCost() {
