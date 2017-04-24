@@ -14,7 +14,7 @@ public class RealTurcky implements Turcky{
 	}
 
 	@Override
-	public void guguBark() {
+	public void gobble() {
 		System.out.println("火鸡咕咕叫");
 	}
 

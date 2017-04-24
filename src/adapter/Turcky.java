@@ -15,5 +15,5 @@ public interface Turcky {
 	/**
 	 * 火鸡咕咕叫
 	 */
-	public void guguBark();
+	public void gobble();
 }

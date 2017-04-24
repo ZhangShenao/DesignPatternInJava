@@ -15,5 +15,5 @@ public interface Duck {
 	/**
 	 * 鸭子嘎嘎叫
 	 */
-	public void gagaBark();
+	public void quack();
 }

@@ -14,7 +14,7 @@ public class RealDuck implements Duck{
 	}
 
 	@Override
-	public void gagaBark() {
+	public void quack() {
 		System.out.println("鸭子嘎嘎叫");
 	}
 

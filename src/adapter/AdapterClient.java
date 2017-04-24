@@ -9,18 +9,24 @@ package adapter;
 public class AdapterClient {
 	public static void main(String[] args) {
 		//创建真实的鸭子对象,是客户端需要的
+		System.out.println("-----------------------------------");
+		System.out.println("真实的鸭子");
 		Duck realDuck = new RealDuck();
 		realDuck.fly();
-		realDuck.gagaBark();
+		realDuck.quack();
 		
 		//创建真实的火鸡对象
+		System.out.println("-----------------------------------");
+		System.out.println("真实的火鸡");
 		Turcky realTurcky = new RealTurcky();
 		realTurcky.fly();
-		realTurcky.guguBark();
+		realTurcky.gobble();
 		
 		//创建火鸡适配器,将火鸡对象转换成鸭子对象,以满足客户的需要,客户并不知道他到底是鸭子还是火鸡
+		System.out.println("-----------------------------------");
+		System.out.println("火鸡的适配器");
 		Duck turckyAdapter = new TurckyAdapter(realTurcky);
 		turckyAdapter.fly();
-		turckyAdapter.gagaBark();
+		turckyAdapter.quack();
 	}
 }
