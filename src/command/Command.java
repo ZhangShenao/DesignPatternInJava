@@ -2,9 +2,9 @@ package command;
 
 /**
  * 
- * <p>Description:命令接口</p>
+ * <p>Description:命令接口,所有的具体命令都要实现该接口</p>
  * @author ZhangShenao
- * @date 2017年4月11日
+ * @date 2017年4月24日
  */
 public interface Command {
 	/**
@@ -13,7 +13,7 @@ public interface Command {
 	public void execute();
 	
 	/**
-	 * 撤销命令,将上一次执行的命令倒置
+	 * 撤销命令
 	 */
 	public void undo();
 }

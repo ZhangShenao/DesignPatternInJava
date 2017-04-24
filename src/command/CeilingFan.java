@@ -2,11 +2,21 @@ package command;
 
 /**
  * 
- * <p>Description: 天花板吊扇,具有高、中、低和关闭4个档位</p>
+ * <p>Description:天花板吊扇</p>
  * @author ZhangShenao
- * @date 2017年4月11日
+ * @date 2017年4月24日
  */
 public class CeilingFan {
+	/**
+	 * 吊扇的位置
+	 */
+	private String location = "";
+	
+	/**
+	 * 吊扇当前的速度
+	 */
+	private int speed;
+	
 	/**
 	 * 高速
 	 */
@@ -15,7 +25,7 @@ public class CeilingFan {
 	/**
 	 * 中速
 	 */
-	public static final int MIDDLE = 2;
+	public static final int MEDIUM = 2;
 	
 	/**
 	 * 低速
@@ -23,76 +33,36 @@ public class CeilingFan {
 	public static final int LOW = 1;
 	
 	/**
-	 * 关闭
+	 * 停止
 	 */
 	public static final int OFF = 0;
-	
-	/**
-	 * 保存当前的转速
-	 */
-	private int speed;
-	
-	private String desc;
-	
-	public CeilingFan(String desc) {
-		this.desc = desc;
+ 
+	public CeilingFan(String location) {
+		this.location = location;
 	}
-	
-	/**
-	 * 设置为高速
-	 */
-	public void high(){
+  
+	public void high() {
 		speed = HIGH;
-		System.out.println(desc + " 高速运转");
+		System.out.println(location + " ceiling fan is on high");
+ 
+	} 
+
+	public void medium() {
+		speed = MEDIUM;
+		System.out.println(location + " ceiling fan is on medium");
 	}
-	
-	/**
-	 * 设置为中速
-	 */
-	public void middle(){
-		speed = MIDDLE;
-		System.out.println(desc + " 中速运转");
-	}
-	
-	/**
-	 * 设置为低速
-	 */
-	public void low(){
+
+	public void low() {
 		speed = LOW;
-		System.out.println(desc + " 低速运转");
+		System.out.println(location + " ceiling fan is on low");
 	}
-	
-	/**
-	 * 关闭风扇
-	 */
-	public void off(){
+ 
+	public void off() {
 		speed = OFF;
-		System.out.println(desc + " 关闭运转");
+		System.out.println(location + " ceiling fan is off");
 	}
-	
-	/**
-	 * 获取风扇转速
-	 */
+ 
 	public int getSpeed() {
 		return speed;
 	}
-
-	/**
-	 * 设置风扇的转速
-	 */
-	public void setSpeed(int speed){
-		if (speed == 0){
-			off();
-		}
-		else if (speed == 1){
-			low();
-		}
-		else if (speed == 2){
-			middle();
-		}
-		else {
-			high();
-		}
-	}
-	
 }
