@@ -1,4 +1,4 @@
-package template;
+package templatemethod;
 
 import java.util.Arrays;
 
