@@ -20,16 +20,31 @@ public class PancakeHouseMenu implements Menu{
 	 */
 	public PancakeHouseMenu(){
 		menuItems = new ArrayList<MenuItem>();
-		addMenuItem("薄煎饼早餐", "薄煎饼,清蛋和吐司", true, 2.99);
-		addMenuItem("薄煎饼早餐例餐", "薄煎饼带煎蛋,香肠", false, 2.99);
-		addMenuItem("蓝莓薄煎饼", "新鲜蓝莓和蓝莓糖浆做成的薄煎饼", true, 3.49);
-		addMenuItem("松饼", "松饼,可以选择蓝莓和草莓", true, 3.59);
+		addItem("K&B's Pancake Breakfast", 
+				"Pancakes with scrambled eggs, and toast", 
+				true,
+				2.99);
+	 
+			addItem("Regular Pancake Breakfast", 
+				"Pancakes with fried eggs, sausage", 
+				false,
+				2.99);
+	 
+			addItem("Blueberry Pancakes",
+				"Pancakes made with fresh blueberries, and blueberry syrup",
+				true,
+				3.49);
+	 
+			addItem("Waffles",
+				"Waffles, with your choice of blueberries or strawberries",
+				true,
+				3.59);
 	}
 	
 	/**
 	 * 添加新的菜单项
 	 */
-	public void addMenuItem(String name, String description, boolean vegetarian,
+	public void addItem(String name, String description, boolean vegetarian,
 			double price){
 		menuItems.add(new MenuItem(name, description, vegetarian, price));
 	}

@@ -17,6 +17,12 @@ public class Waitress {
 	 */
 	private List<Menu> allMenus = new ArrayList<>();
 	
+	public Waitress(Menu... menus){
+		for (Menu menu : menus){
+			allMenus.add(menu);
+		}
+	}
+	
 	/**
 	 * 添加餐单
 	 */

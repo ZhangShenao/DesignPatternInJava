@@ -29,17 +29,26 @@ public class DinerMenu implements Menu{
 	 */
 	public DinerMenu(){
 		menuItems = new MenuItem[MAX_ITEM_NUM];
-		addMenuItem("素食BLT", "培根、生菜、西红柿和面包", false, 2.99);
-		addMenuItem("BLT", "培根、生菜和西红柿", false, 2.59);
-		addMenuItem("例汤", "一碗例汤配土豆沙拉", true, 1.99);
-		addMenuItem("热狗", "热狗、酸菜和土豆芝士", false, 3.99);
-		addMenuItem("清蒸时蔬加糙米", "清蒸的时蔬配糙米", true, 1.59);
+		addItem("Vegetarian BLT",
+				"(Fakin') Bacon with lettuce & tomato on whole wheat", true, 2.99);
+			addItem("BLT",
+				"Bacon with lettuce & tomato on whole wheat", false, 2.99);
+			addItem("Soup of the day",
+				"Soup of the day, with a side of potato salad", false, 3.29);
+			addItem("Hotdog",
+				"A hot dog, with saurkraut, relish, onions, topped with cheese",
+				false, 3.05);
+			addItem("Steamed Veggies and Brown Rice",
+				"Steamed vegetables over brown rice", true, 3.99);
+			addItem("Pasta",
+				"Spaghetti with Marinara Sauce, and a slice of sourdough bread",
+				true, 3.89);
 	}
 	
 	/**
 	 * 添加新的菜单项
 	 */
-	public void addMenuItem(String name, String description, boolean vegetarian,
+	public void addItem(String name, String description, boolean vegetarian,
 			double price){
 		//判断是否还可以添加新的菜单项
 		if (menuItemIndex < 0 || menuItemIndex >= MAX_ITEM_NUM){
