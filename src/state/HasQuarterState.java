@@ -1,5 +1,7 @@
 package state;
 
+import java.util.Random;
+
 /**
  * 
  * <p>Description:  已投币状态</p>
@@ -7,6 +9,11 @@ package state;
  * @date 2017年4月26日 上午8:04:47
  */
 public class HasQuarterState extends AbstractState{
+	/**
+	 * 生成随机数,有十分之一的几率进入赢家状态
+	 */
+	private final Random random = new Random(System.currentTimeMillis());
+	
 	public HasQuarterState(GumballMachine gumballMachine) {
 		super(gumballMachine);
 	}
@@ -26,9 +33,18 @@ public class HasQuarterState extends AbstractState{
 
 	@Override
 	public void turnCrank() {
-		//转换到售出糖果状态
 		System.out.println("购买糖果成功,请等待分发糖果");
-		gumballMachine.setState(gumballMachine.getSoldState());
+		gumballMachine.setCanDispense(true);
+		
+		//如果生成了随机数0,且剩余糖果足够,则转换到赢家状态
+		if (random.nextInt(10) == 0 && gumballMachine.getGumballNum() > 1){
+			gumballMachine.setState(gumballMachine.getWinnerState());
+		}
+		
+		//否则转换到售出糖果状态
+		else {
+			gumballMachine.setState(gumballMachine.getSoldState());
+		}
 		
 	}
 

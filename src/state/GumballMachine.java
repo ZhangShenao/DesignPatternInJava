@@ -2,7 +2,7 @@ package state;
 
 /**
  * 
- * <p>Description:  糖果机,具有不同的状态,根据当前状态的不同,会表现出不同的行为。</p>
+ * <p>Description: 糖果机,具有不同的状态,根据当前状态的不同,会表现出不同的行为。(Context类)</p>
  * @author ZhangShenao
  * @date 2017年4月26日 上午7:57:16
  */
@@ -13,8 +13,13 @@ public class GumballMachine {
 	private State soldState;		//售出糖果状态
 	private State soldOutState;		//糖果售罄状态
 	
+	//新增的赢家状态
+	private State winnerState;
+	
 	private State state;	//当前状态
 	private int gumballNum = 0;		//糖果机内糖果的数量
+	
+	private boolean canDispense;	//是否可以分发糖果的标记
 	
 	/**
 	 * 初始化糖果机,放入指定数量的糖果
@@ -28,6 +33,7 @@ public class GumballMachine {
 		hasQuarterState = new HasQuarterState(this);
 		soldState = new SoldState(this);
 		soldOutState = new SoldOutState(this);
+		winnerState = new WinnerState(this);
 		
 		//设置当前状态
 		if (gumballNum == 0){
@@ -58,7 +64,7 @@ public class GumballMachine {
 	 */
 	public void turnCrank() {
 		state.turnCrank();
-		if (state == soldState){
+		if (canDispense){
 			state.dispense();
 		}
 	}
@@ -101,6 +107,20 @@ public class GumballMachine {
 		this.state = state;
 	}
 	
+	public State getWinnerState() {
+		return winnerState;
+	}
+	
+	
+
+	public boolean isCanDispense() {
+		return canDispense;
+	}
+
+	public void setCanDispense(boolean canDispense) {
+		this.canDispense = canDispense;
+	}
+
 	/**
 	 * 打印当前糖果机的状态
 	 */
