@@ -72,4 +72,42 @@ public class GumballMachine {
 			gumballNum--;
 		}
 	}
+
+	public State getNoQuarterState() {
+		return noQuarterState;
+	}
+
+	public State getHasQuarterState() {
+		return hasQuarterState;
+	}
+
+	public State getSoldState() {
+		return soldState;
+	}
+
+	public State getSoldOutState() {
+		return soldOutState;
+	}
+
+	public State getState() {
+		return state;
+	}
+
+	public int getGumballNum() {
+		return gumballNum;
+	}
+
+	public void setState(State state) {
+		this.state = state;
+	}
+	
+	/**
+	 * 打印当前糖果机的状态
+	 */
+	public String toString() {
+		StringBuilder result = new StringBuilder("[ 糖果机-->");
+		result.append("剩余糖果数: " + gumballNum);
+		result.append(",当前状态: " + state);
+		return result.append(" ]").toString();
+	}
 }

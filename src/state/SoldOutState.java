@@ -13,26 +13,27 @@ public class SoldOutState extends AbstractState{
 
 	@Override
 	public void insertQuarter() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("当前糖果已售罄,请使用其他糖果机");
 	}
 
 	@Override
 	public void ejectQuarter() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("当前糖果已售罄,请使用其他糖果机");
 	}
 
 	@Override
 	public void turnCrank() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("当前糖果已售罄,请使用其他糖果机");
 	}
 
 	@Override
 	public void dispense() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("当前糖果已售罄,请使用其他糖果机");
+	}
+	
+	@Override
+	public String toString() {
+		return "糖果售罄";
 	}
 
 }

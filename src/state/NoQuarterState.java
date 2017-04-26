@@ -13,26 +13,29 @@ public class NoQuarterState extends AbstractState{
 
 	@Override
 	public void insertQuarter() {
-		// TODO Auto-generated method stub
-		
+		//转换到已投硬币状态
+		System.out.println("您投入了硬币,请转动曲柄");
+		gumballMachine.setState(gumballMachine.getHasQuarterState());
 	}
 
 	@Override
 	public void ejectQuarter() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("您还未投入硬币,无法退还硬币");
 	}
 
 	@Override
 	public void turnCrank() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("您还未投入硬币,无法转动曲柄");
 	}
 
 	@Override
 	public void dispense() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("您还未投入硬币,无法分发糖果");
+	}
+	
+	@Override
+	public String toString() {
+		return "未投入硬币";
 	}
 
 }
