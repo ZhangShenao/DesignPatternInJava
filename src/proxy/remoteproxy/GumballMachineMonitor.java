@@ -1,8 +1,6 @@
-package proxy;
+package proxy.remoteproxy;
 
 import java.rmi.RemoteException;
-
-import proxy.remoteproxy.GumballMachineRemote;
 
 /**
  * 

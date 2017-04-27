@@ -2,8 +2,6 @@ package proxy.remoteproxy;
 
 import java.rmi.Naming;
 
-import proxy.GumballMachineMonitor;
-
 
 /**
  * 
